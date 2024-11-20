@@ -9,6 +9,9 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Details } from "./views/details.jsx";
+import { NewDetails } from "./views/newDetails.jsx";
+import { Favorites } from "./views/favorites"; // Importar la nueva vista
 
 //create your first component
 const Layout = () => {
@@ -23,8 +26,8 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
+						<Route path="/details/:type/:uid" element={<NewDetails />} />
+						<Route path="/favorites" element={<Favorites />} /> {/* Nueva ruta */}
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />
